@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mainList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mvp.PeopleActivity">
 
     <include
-        android:id="@+id/progressBar"
-        layout="@layout/progress_bar"/>
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/list_people"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_people"
+        android:layout_width="match_parent"
+        android:layout_marginTop="60sp"
+        android:layout_marginBottom="50sp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rg_sort"
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+    <RadioGroup
+        android:id="@+id/rg_sort"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_by_id"
+            android:text="@string/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+
+        <RadioButton
+            android:id="@+id/rb_by_name"
+            android:text="@string/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

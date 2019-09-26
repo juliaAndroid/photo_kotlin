@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="by.soveit.apod">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="by.morozova.people">
 
     <application
-        android:name=".ApodApplication"
-        android:allowBackup="false"
-        android:fullBackupContent="false"
+        android:name="by.morozova.people.App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activity.PictureDayInfoActivity"
-            android:theme="@style/AppTheme.FullScreen"/>
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme">
+        <activity android:name="by.morozova.people.mvp.PeopleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
