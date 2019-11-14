@@ -57,7 +57,7 @@ class PictureDayInfoActivity : AppCompatActivity() {
         tvAllText.text = imageGallery.explanation
         var validUrl: String? = null
         when (imageGallery.mediaType) {
-            MediaType.IMAGE -> imageGallery.hdurl
+            MediaType.IMAGE -> imageGallery.url
             else -> {
                 imageGallery.thumbnailUrl != null ?: imageGallery.thumbnailUrl
                 ivPlay.visibility = View.VISIBLE
